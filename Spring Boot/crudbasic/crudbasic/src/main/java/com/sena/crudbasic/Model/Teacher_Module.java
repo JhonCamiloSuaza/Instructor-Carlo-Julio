@@ -1,4 +1,4 @@
-package com.sena.crudbasic.Model;
+package com.sena.crudbasic.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -23,4 +23,31 @@ public class Teacher_Module {
     @ManyToOne
     @JoinColumn(name = "id_training_module")
     private TrainingModule trainingModule;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Teacher getTeacher() {
+        return teacher;
+    }
+
+    public void setTeacher(Teacher teacher) {
+        this.teacher = teacher;
+    }
+
+    public TrainingModule getTrainingModule() {
+        return trainingModule;
+    }
+
+    public void setTrainingModule(TrainingModule trainingModule) {
+        this.trainingModule = trainingModule;
+    }
+
+
+    
 }

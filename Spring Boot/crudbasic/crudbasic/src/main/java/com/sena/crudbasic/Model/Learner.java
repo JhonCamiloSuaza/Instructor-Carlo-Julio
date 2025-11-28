@@ -1,4 +1,4 @@
-package com.sena.crudbasic.Model;
+package com.sena.crudbasic.model;
 
 import java.util.List;
 
@@ -30,5 +30,49 @@ public class Learner {
 
     @OneToOne
     @JoinColumn(name = "id_system_user")
-    private SystemUser systemUser;
+    private UserSystms systemUser;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getLearnerName() {
+        return learnerName;
+    }
+
+    public void setLearnerName(String learnerName) {
+        this.learnerName = learnerName;
+    }
+
+    public int getYearsOld() {
+        return yearsOld;
+    }
+
+    public void setYearsOld(int yearsOld) {
+        this.yearsOld = yearsOld;
+    }
+
+    public List<Registration> getRegistrations() {
+        return registrations;
+    }
+
+    public void setRegistrations(List<Registration> registrations) {
+        this.registrations = registrations;
+    }
+
+    public UserSystms getSystemUser() {
+        return systemUser;
+    }
+
+    public void setSystemUser(UserSystms systemUser) {
+        this.systemUser = systemUser;
+    }
+
+
+
+    
 }

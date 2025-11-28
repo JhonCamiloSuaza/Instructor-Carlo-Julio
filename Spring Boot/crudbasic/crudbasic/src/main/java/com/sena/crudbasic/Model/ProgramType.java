@@ -1,4 +1,4 @@
-package com.sena.crudbasic.Model;
+package com.sena.crudbasic.model;
 
 import java.util.List;
 
@@ -22,4 +22,31 @@ public class ProgramType {
 
     @OneToMany(mappedBy = "programType")
     private List<Module_Assignment> modules;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getTypeName() {
+        return typeName;
+    }
+
+    public void setTypeName(String typeName) {
+        this.typeName = typeName;
+    }
+
+    public List<Module_Assignment> getModules() {
+        return modules;
+    }
+
+    public void setModules(List<Module_Assignment> modules) {
+        this.modules = modules;
+    }
+
+
+    
 }

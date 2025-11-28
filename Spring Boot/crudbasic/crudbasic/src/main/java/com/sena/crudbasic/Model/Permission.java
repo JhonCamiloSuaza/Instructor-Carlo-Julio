@@ -1,4 +1,4 @@
-package com.sena.crudbasic.Model;
+package com.sena.crudbasic.model;
 
 import java.util.List;
 
@@ -22,4 +22,32 @@ public class Permission {
 
     @OneToMany(mappedBy = "permission")
     private List<User_Permission> users;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getPermissionName() {
+        return permissionName;
+    }
+
+    public void setPermissionName(String permissionName) {
+        this.permissionName = permissionName;
+    }
+
+    public List<User_Permission> getUsers() {
+        return users;
+    }
+
+    public void setUsers(List<User_Permission> users) {
+        this.users = users;
+    }
+
+
+
+    
 }

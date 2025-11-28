@@ -1,4 +1,4 @@
-package com.sena.crudbasic.Model;
+package com.sena.crudbasic.model;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -32,4 +32,61 @@ public class TrainingModule {
 
     @OneToMany(mappedBy = "trainingModule")
     private List<Registration> registrations;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getModuleTitle() {
+        return moduleTitle;
+    }
+
+    public void setModuleTitle(String moduleTitle) {
+        this.moduleTitle = moduleTitle;
+    }
+
+    public BigDecimal getModuleCost() {
+        return moduleCost;
+    }
+
+    public void setModuleCost(BigDecimal moduleCost) {
+        this.moduleCost = moduleCost;
+    }
+
+    public List<Module_Assignment> getAssignments() {
+        return assignments;
+    }
+
+    public void setAssignments(List<Module_Assignment> assignments) {
+        this.assignments = assignments;
+    }
+
+    public List<Teacher_Module> getTeachers() {
+        return teachers;
+    }
+
+    public void setTeachers(List<Teacher_Module> teachers) {
+        this.teachers = teachers;
+    }
+
+    public List<Registration> getRegistrations() {
+        return registrations;
+    }
+
+    public void setRegistrations(List<Registration> registrations) {
+        this.registrations = registrations;
+    }
+
+    public void setModuleName(BigDecimal moduleCost) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+
+
+
+    
 }

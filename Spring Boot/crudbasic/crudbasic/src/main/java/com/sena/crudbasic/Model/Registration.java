@@ -1,4 +1,4 @@
-package com.sena.crudbasic.Model;
+package com.sena.crudbasic.model;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -33,4 +33,53 @@ public class Registration {
 
     @OneToMany(mappedBy = "registration")
     private List<FeePayment> payments;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public LocalDate getRegisteredOn() {
+        return registeredOn;
+    }
+
+    public void setRegisteredOn(LocalDate registeredOn) {
+        this.registeredOn = registeredOn;
+    }
+
+    public Learner getLearner() {
+        return learner;
+    }
+
+    public void setLearner(Learner learner) {
+        this.learner = learner;
+    }
+
+    public TrainingModule getTrainingModule() {
+        return trainingModule;
+    }
+
+    public void setTrainingModule(TrainingModule trainingModule) {
+        this.trainingModule = trainingModule;
+    }
+
+    public List<FeePayment> getPayments() {
+        return payments;
+    }
+
+    public void setPayments(List<FeePayment> payments) {
+        this.payments = payments;
+    }
+
+    public Object getTeacher() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getTeacher'");
+    }
+
+
+
+    
 }

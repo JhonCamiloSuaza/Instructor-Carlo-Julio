@@ -1,4 +1,4 @@
-package com.sena.crudbasic.Model;
+package com.sena.crudbasic.model;
 
 import java.util.List;
 
@@ -25,4 +25,40 @@ public class Teacher {
 
     @OneToMany(mappedBy = "teacher")
     private List<Teacher_Module> modules;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getTeacherName() {
+        return teacherName;
+    }
+
+    public void setTeacherName(String teacherName) {
+        this.teacherName = teacherName;
+    }
+
+    public String getExpertise() {
+        return expertise;
+    }
+
+    public void setExpertise(String expertise) {
+        this.expertise = expertise;
+    }
+
+    public List<Teacher_Module> getModules() {
+        return modules;
+    }
+
+    public void setModules(List<Teacher_Module> modules) {
+        this.modules = modules;
+    }
+
+
+    
+    
 }

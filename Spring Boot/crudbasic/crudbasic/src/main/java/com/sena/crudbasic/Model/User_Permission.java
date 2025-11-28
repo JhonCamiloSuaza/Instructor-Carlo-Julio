@@ -1,4 +1,4 @@
-package com.sena.crudbasic.Model;
+package com.sena.crudbasic.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -18,9 +18,38 @@ public class User_Permission {
 
     @ManyToOne
     @JoinColumn(name = "id_system_user")
-    private SystemUser systemUser;
+    private UserSystms systemUser;
 
     @ManyToOne
     @JoinColumn(name = "id_permission")
     private Permission permission;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public UserSystms getSystemUser() {
+        return systemUser;
+    }
+
+    public void setSystemUser(UserSystms systemUser) {
+        this.systemUser = systemUser;
+    }
+
+    public Permission getPermission() {
+        return permission;
+    }
+
+    public void setPermission(Permission permission) {
+        this.permission = permission;
+    }
+
+    
+
+
+    
 }

@@ -1,4 +1,4 @@
-package com.sena.crudbasic.Model;
+  package com.sena.crudbasic.model;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -28,4 +28,42 @@ public class FeePayment {
     @ManyToOne
     @JoinColumn(name = "id_registration")
     private Registration registration;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public BigDecimal getFeeAmount() {
+        return feeAmount;
+    }
+
+    public void setFeeAmount(BigDecimal feeAmount) {
+        this.feeAmount = feeAmount;
+    }
+
+    public LocalDate getPaidOn() {
+        return paidOn;
+    }
+
+    public void setPaidOn(LocalDate paidOn) {
+        this.paidOn = paidOn;
+    }
+
+    public Registration getRegistration() {
+        return registration;
+    }
+
+    public void setRegistration(Registration registration) {
+        this.registration = registration;
+    }
+
+
+    
+    
+
+    
 }
