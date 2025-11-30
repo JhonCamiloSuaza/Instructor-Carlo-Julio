@@ -15,17 +15,18 @@ public class TeacherModuleController {
     @Autowired
     private ITeacherModuleRepository repository;
 
-    @GetMapping("all")
+    @GetMapping("/all")
     public List<Teacher_Module> getAll() {
         return repository.findAll();
     }
 
-    @PostMapping("save")
+    @PostMapping("/save")
     public Teacher_Module save(@RequestBody Teacher_Module t) {
         return repository.save(t);
     }
 
-    @GetMapping("/id")
+    // ✅ CORREGIDO
+    @GetMapping("/{id}")
     public Teacher_Module getById(@PathVariable int id) {
         return repository.findById(id).orElse(null);
     }

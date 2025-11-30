@@ -9,23 +9,24 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("teacher")
+@RequestMapping("/teacher")
 public class TeacherController {
 
     @Autowired
     private ITeacherRepository repository;
 
-    @GetMapping("all")
+    @GetMapping("/all")
     public List<Teacher> getAll() {
         return repository.findAll();
     }
 
-    @PostMapping("save")
+    @PostMapping("/save")
     public Teacher save(@RequestBody Teacher t) {
         return repository.save(t);
     }
 
-    @GetMapping("/id")
+    // ✅ CORREGIDO
+    @GetMapping("/{id}")
     public Teacher getById(@PathVariable int id) {
         return repository.findById(id).orElse(null);
     }
@@ -40,7 +41,8 @@ public class TeacherController {
         return repository.save(t);
     }
 
-    @DeleteMapping("/delete/id")
+    // ✅ CORREGIDO
+    @DeleteMapping("/delete/{id}")
     public void delete(@PathVariable int id) {
         repository.deleteById(id);
     }

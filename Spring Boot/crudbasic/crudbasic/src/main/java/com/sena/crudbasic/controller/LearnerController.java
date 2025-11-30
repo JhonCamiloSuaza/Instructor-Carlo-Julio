@@ -15,22 +15,24 @@ public class LearnerController {
     @Autowired
     private ILearnerRepository repository;
 
-    @GetMapping("all")
+    @GetMapping("/all")
     public List<Learner> getAll() {
         return repository.findAll();
     }
 
-    @PostMapping("save")
+    @PostMapping("/save")
     public Learner save(@RequestBody Learner l) {
         return repository.save(l);
     }
 
-    @GetMapping("id")
+    // CORREGIDO
+    @GetMapping("/{id}")
     public Learner getById(@PathVariable int id) {
         return repository.findById(id).orElse(null);
     }
 
-    @PutMapping("update/id")
+    // CORREGIDO
+    @PutMapping("/update/{id}")
     public Learner update(@PathVariable int id, @RequestBody Learner data) {
         Learner l = repository.findById(id).orElse(null);
         if (l == null) return null;
@@ -42,7 +44,8 @@ public class LearnerController {
         return repository.save(l);
     }
 
-    @DeleteMapping("delete/id")
+    // CORREGIDO
+    @DeleteMapping("/delete/{id}")
     public void delete(@PathVariable int id) {
         repository.deleteById(id);
     }

@@ -15,17 +15,18 @@ public class ProgramTypeController {
     @Autowired
     private IProgramTypeRepository repository;
 
-    @GetMapping("all")
+    @GetMapping("/all")
     public List<ProgramType> getAll() {
         return repository.findAll();
     }
 
-    @PostMapping("save")
+    @PostMapping("/save")
     public ProgramType save(@RequestBody ProgramType p) {
         return repository.save(p);
     }
 
-    @GetMapping("/id")
+    // ✅ CORREGIDO
+    @GetMapping("/{id}")
     public ProgramType getById(@PathVariable int id) {
         return repository.findById(id).orElse(null);
     }

@@ -25,7 +25,7 @@ public class UserPermissionController {
         return repository.save(u);
     }
 
-    @GetMapping("id")
+    @GetMapping("/{id}")  // ✔ CORREGIDO
     public User_Permission getById(@PathVariable int id) {
         return repository.findById(id).orElse(null);
     }

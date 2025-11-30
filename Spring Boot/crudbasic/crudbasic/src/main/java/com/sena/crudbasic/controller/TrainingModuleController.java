@@ -15,27 +15,32 @@ public class TrainingModuleController {
     @Autowired
     private ITrainingModuleRepository repository;
 
-    @GetMapping("all")
+    @GetMapping("/all")
     public List<TrainingModule> getAll() {
         return repository.findAll();
     }
 
-    @PostMapping("save")
+    @PostMapping("/save")
     public TrainingModule save(@RequestBody TrainingModule t) {
         return repository.save(t);
     }
 
-    @GetMapping("id")
+    @GetMapping("/{id}")
     public TrainingModule getById(@PathVariable int id) {
         return repository.findById(id).orElse(null);
     }
 
-    @PutMapping("update/id")
+    @PutMapping("/update/{id}")
     public TrainingModule update(@PathVariable int id, @RequestBody TrainingModule data) {
         TrainingModule t = repository.findById(id).orElse(null);
-        if (t == null) return null;
 
+        if (t == null) {
+            return null;
+        }
+
+        // 👇 CAMPOS CORRECTOS
         t.setModuleName(data.getModuleCost());
+        t.setModuleCost(data.getModuleCost());
 
         return repository.save(t);
     }

@@ -27,8 +27,12 @@ public class RegistrationController {
         return repository.findById(id).orElse(null);
     }
 
-    @PutMapping("update/id")
-    public com.sena.crudbasic.model.Registration update(@PathVariable int id, @RequestBody com.sena.crudbasic.model.Registration data) {
+    // ✅ CORREGIDO
+    @PutMapping("/update/{id}")
+    public com.sena.crudbasic.model.Registration update(
+            @PathVariable int id,
+            @RequestBody com.sena.crudbasic.model.Registration data) {
+
         com.sena.crudbasic.model.Registration p = repository.findById(id).orElse(null);
         if (p == null) return null;
 
@@ -39,7 +43,8 @@ public class RegistrationController {
         return repository.save(p);
     }
 
-    @DeleteMapping("delete/id")
+    // ✅ CORREGIDO
+    @DeleteMapping("/delete/{id}")
     public void delete(@PathVariable int id) {
         repository.deleteById(id);
     }

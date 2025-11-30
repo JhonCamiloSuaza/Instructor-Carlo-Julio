@@ -21,7 +21,8 @@ public class FeePaymentController {
         return service.getAll();
     }
 
-    @GetMapping("id}")
+    // CORREGIDO
+    @GetMapping("/{id}")
     public FeePaymentDto getById(@PathVariable int id) {
         return service.getById(id);
     }
@@ -31,12 +32,13 @@ public class FeePaymentController {
         return service.save(dto);
     }
 
-    @PutMapping("id}")
+    @PutMapping("/update/{id}")
     public FeePaymentDto update(@PathVariable int id, @RequestBody FeePaymentDto dto) {
         return service.update(id, dto);
     }
 
-    @DeleteMapping("id}")
+    // CORREGIDO
+    @DeleteMapping("/{id}")
     public void delete(@PathVariable int id) {
         service.delete(id);
     }

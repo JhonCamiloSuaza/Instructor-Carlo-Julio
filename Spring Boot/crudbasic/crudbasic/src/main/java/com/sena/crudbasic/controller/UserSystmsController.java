@@ -25,7 +25,8 @@ public class UserSystmsController {
         return repository.save(u);
     }
 
-    @GetMapping("id}")
+    // ✔ CORREGIDO
+    @GetMapping("/{id}")
     public UserSystms getById(@PathVariable int id) {
         return repository.findById(id).orElse(null);
     }

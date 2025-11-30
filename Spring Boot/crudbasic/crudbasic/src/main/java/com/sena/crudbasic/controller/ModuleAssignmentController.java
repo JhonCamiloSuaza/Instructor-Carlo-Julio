@@ -15,22 +15,24 @@ public class ModuleAssignmentController {
     @Autowired
     private IModuleAssignmentRepository repository;
 
-    @GetMapping("all")
+    @GetMapping("/all")
     public List<Module_Assignment> getAll() {
         return repository.findAll();
     }
 
-    @PostMapping("save")
+    @PostMapping("/save")
     public Module_Assignment save(@RequestBody Module_Assignment m) {
         return repository.save(m);
     }
 
-    @GetMapping("id")
+    // CORREGIDO
+    @GetMapping("/{id}")
     public Module_Assignment getById(@PathVariable int id) {
         return repository.findById(id).orElse(null);
     }
 
-    @PutMapping("update/{id")
+    // CORREGIDO
+    @PutMapping("/update/{id}")
     public Module_Assignment update(@PathVariable int id, @RequestBody Module_Assignment data) {
         Module_Assignment m = repository.findById(id).orElse(null);
         if (m == null) return null;
