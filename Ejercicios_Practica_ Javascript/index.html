@@ -9,10 +9,15 @@
 
 
   <nav>
-    <button class="activo" onclick="mostrarSeccion('ej1', this)">Ejercicio 1</button>
-    <button onclick="mostrarSeccion('ej2', this)">Ejercicio 2</button>
-    <button onclick="mostrarSeccion('ej3', this)">Ejercicio 3</button>
-    <button onclick="mostrarSeccion('ej4', this)">Ejercicio 4</button>
+    <button class="activo" onclick="mostrarSeccion('ej1', this)">Mostrar Texto</button>
+    <button onclick="mostrarSeccion('ej2', this)">Calculadora de Suma</button>
+    <button onclick="mostrarSeccion('ej3', this)">Color de Fondo</button>
+    <button onclick="mostrarSeccion('ej4', this)">Contador de Clics</button>
+    <button onclick="mostrarSeccion('ej5', this)">Lista Dinámica</button>
+    <button onclick="mostrarSeccion('ej6', this)">Validación de Formulario</button>
+    <button onclick="mostrarSeccion('ej7', this)">Calculadora Básica</button>
+    <button onclick="mostrarSeccion('ej8', this)">Eliminación de Lista</button>
+    <button onclick="mostrarSeccion('ej9', this)">Temporizador</button>
   </nav>
 
   <section id="ej1" class="seccion visible">
@@ -51,7 +56,76 @@
     <p class="resultado" id="mensajeContador"></p>
   </section>
 
+  <section id="ej5" class="seccion">
+    <h2> Lista dinámica</h2>
+    <div class="btns-fila">
+      <input type="text" id="inputTarea" placeholder="Escribir tarea">
+      <button class="btn btn-cyan" id="btnAgregar">Agregar</button>
+    </div>
+    <ul id="listaTareas"></ul>
+  </section>
+
+ 
+<section id="ej6" class="seccion">
+  <h2> Validación de formulario</h2>
+  <div class="formulario">
+
+    <label>Nombre</label>
+    <input type="text" id="nombre" placeholder="Tu nombre">
+
+    <label>Correo</label>
+    <input type="email" id="correo" placeholder="Tu correo">
+
+    <label>Edad</label>
+    <input type="number" id="edad" placeholder="Tu edad">
+
+    <button class="btn btn-cyan" id="btnEnviar">Enviar</button>
+    <p class="resultado" id="mensajeFormulario"></p>
+
+  </div>
+</section>
+
+<section id="ej7" class="seccion">
+  <h2> Calculadora básica</h2>
+  <div class="calculadora">
+
+    <input type="number" id="num1" placeholder="Número 1">
+    <input type="number" id="num2" placeholder="Número 2">
+
+    <div class="btns-operaciones">
+      <button class="btn btn-operacion" id="btnSuma">+</button>
+      <button class="btn btn-operacion" id="btnResta">-</button>
+      <button class="btn btn-operacion" id="btnMulti">×</button>
+      <button class="btn btn-operacion" id="btnDivision">÷</button>
+    </div>
+
+    <p class="resultado" id="resultadoCalc"></p>
+
+  </div>
+</section>
+
+<section id="ej8" class="seccion">
+  <h2> Eliminación de lista</h2>
+  <div class="btns-fila">
+    <input type="text" id="inputTarea8" placeholder="Escribir tarea">
+    <button class="btn btn-cyan" id="btnAgregar8">Agregar</button>
+  </div>
+  <ul id="listaTareas8"></ul>
+</section>
+
+<section id="ej9" class="seccion">
+  <h2>Temporizador</h2>
+  <p class="numero-contador" id="tiempoDisplay">0</p>
+  <p class="subtitulo">segundos</p>
+  <div class="btns-fila">
+    <button class="btn btn-cyan" id="btnIniciar">Iniciar</button>
+    <button class="btn btn-rojo" id="btnDetener">Detener</button>
+    <button class="btn btn-gris" id="btnReiniciarTimer">Reiniciar</button>
+  </div>
+</section>
+
   <script src="script.js"></script>
 
 </body>
 </html>
+

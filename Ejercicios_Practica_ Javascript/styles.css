@@ -126,3 +126,147 @@ input[type="number"] {
   gap: 15px;
   margin-top: 10px;
 }
+
+/* ---- EJERCICIO 5 ---- */
+#listaTareas {
+  list-style: none;
+  margin-top: 25px;
+  width: 100%;
+  max-width: 400px;
+}
+
+#listaTareas li {
+  background-color: #1a1a1a;
+  border-left: 4px solid #00f5ff;
+  padding: 12px 20px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+input[type="text"] {
+  background-color: #1a1a1a;
+  border: 2px solid #00f5ff;
+  color: #ffffff;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 16px;
+  width: 250px;
+}
+.btn-eliminar {
+  float: right;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+  transition: transform 0.2s;
+}
+
+.btn-eliminar:hover {
+  transform: scale(1.2);
+}
+
+/* FORMULARIO */
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 400px;
+}
+
+label {
+  color: #00f5ff;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.formulario input {
+  background-color: #1a1a1a;
+  border: 2px solid #00f5ff;
+  color: #ffffff;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 16px;
+  width: 100%;
+}
+
+.formulario input:focus {
+  outline: none;
+  border-color: #4dff88;
+}
+
+/* CALCULADORA */
+.calculadora {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.btns-operaciones {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-operacion {
+  background-color: #1a1a1a;
+  color: #00f5ff;
+  border: 2px solid #00f5ff;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-operacion:hover {
+  background-color: #00f5ff;
+  color: #0f0f0f;
+}
+
+/* Eliminación de elementos de lista*/
+#listaTareas8 {
+  list-style: none;
+  margin-top: 25px;
+  width: 100%;
+  max-width: 400px;
+}
+
+#listaTareas8 li {
+  background-color: #1a1a1a;
+  border-left: 4px solid #ff4d4d;
+  padding: 12px 20px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-eliminar8 {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 5px 12px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: bold;
+  transition: transform 0.2s;
+}
+
+.btn-eliminar8:hover {
+  transform: scale(1.1);
+}
