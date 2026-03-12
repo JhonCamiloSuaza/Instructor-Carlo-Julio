@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicios JavaScript</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+  <nav>
+    <button class="activo" onclick="mostrarSeccion('ej1', this)">Ejercicio 1</button>
+    <button onclick="mostrarSeccion('ej2', this)">Ejercicio 2</button>
+    <button onclick="mostrarSeccion('ej3', this)">Ejercicio 3</button>
+    <button onclick="mostrarSeccion('ej4', this)">Ejercicio 4</button>
+  </nav>
+
+  <section id="ej1" class="seccion visible">
+    <h2> Mostrar texto en pantalla</h2>
+    <button class="btn btn-cyan" id="btnMostrar">Mostrar mensaje</button>
+    <p class="resultado" id="mensaje"></p>
+  </section>
+
+
+  <section id="ej2" class="seccion">
+    <h2> Calculadora de Suma</h2>
+    <input type="number" id="numero1" placeholder="Número 1">
+    <input type="number" id="numero2" placeholder="Número 2">
+    <br><br>
+    <button class="btn btn-cyan" id="btnSumar">Sumar</button>
+    <p class="resultado" id="resultadoSuma">resultado</p>
+  </section>
+
+  <section id="ej3" class="seccion">
+    <h2> Cambiar color de fondo</h2>
+    <div class="btns-fila">
+      <button class="btn btn-rojo" id="rojo">Rojo</button>
+      <button class="btn btn-azul" id="azul">Azul</button>
+      <button class="btn btn-verde" id="verde">Verde</button>
+    </div>
+  </section>
+
+  <section id="ej4" class="seccion">
+    <h2> Contador de clics</h2>
+    <p class="numero-contador" id="contador">0</p>
+    <p class="subtitulo">Máximo: 50 clics</p>
+    <div class="btns-fila">
+      <button class="btn btn-cyan" id="btnContar">Clic</button>
+      <button class="btn btn-gris" id="btnReiniciar">Reiniciar</button>
+    </div>
+    <p class="resultado" id="mensajeContador"></p>
+  </section>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0f0f0f;
+  color: #ffffff;
+  font-family: 'Segoe UI', sans-serif;
+  min-height: 100vh;
+}
+
+/* NAVEGACION */
+nav {
+  background-color: #1a1a1a;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  border-bottom: 2px solid #00f5ff;
+}
+
+nav button {
+  background-color: transparent;
+  color: #00f5ff;
+  border: 2px solid #00f5ff;
+  padding: 8px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s;
+}
+
+nav button:hover {
+  background-color: #00f5ff;
+  color: #0f0f0f;
+}
+
+nav button.activo {
+  background-color: #00f5ff;
+  color: #0f0f0f;
+  font-weight: bold;
+}
+
+/* SECCIONES */
+.seccion {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 90vh;
+  padding: 40px;
+}
+
+.seccion.visible {
+  display: flex;
+}
+
+h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #00f5ff;
+  text-align: center;
+}
+
+/* BOTONES GENERALES */
+.btn {
+  padding: 12px 30px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.2s;
+  font-weight: bold;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.btn-cyan  { background-color: #00f5ff; color: #0f0f0f; }
+.btn-rojo  { background-color: #ff4d4d; color: white; }
+.btn-azul  { background-color: #4d79ff; color: white; }
+.btn-verde { background-color: #4dff88; color: #0f0f0f; }
+.btn-gris  { background-color: #444;    color: white; }
+
+/* INPUTS */
+input[type="number"] {
+  background-color: #1a1a1a;
+  border: 2px solid #00f5ff;
+  color: #ffffff;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 16px;
+  width: 180px;
+  text-align: center;
+  margin: 5px;
+}
+
+/* RESULTADO */
+.resultado {
+  margin-top: 25px;
+  font-size: 22px;
+  color: #00f5ff;
+  font-weight: bold;
+}
+
+/* CONTADOR */
+.numero-contador {
+  font-size: 80px;
+  font-weight: bold;
+  color: #00f5ff;
+  margin: 20px 0;
+}
+
+.subtitulo {
+  color: #888;
+  margin-bottom: 20px;
+}
+
+/* FILA DE BOTONES */
+.btns-fila {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
