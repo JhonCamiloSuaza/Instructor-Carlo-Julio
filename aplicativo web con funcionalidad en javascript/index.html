@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trabajo JavaScript</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <h1> JavaScript</h1>
+    <p class="subtitulo">Aplicativo Web con Formularios y Resultados Dinámicos</p>
+  </header>
+
+  <nav>
+    <button class="nav-btn activo" onclick="mostrarProblema('p1', this)"> Banco</button>
+    <button class="nav-btn" onclick="mostrarProblema('p2', this)"> Inventario</button>
+    <button class="nav-btn" onclick="mostrarProblema('p3', this)"> Estudiantes</button>
+    <button class="nav-btn" onclick="mostrarProblema('p4', this)"> Carrito</button>
+    <button class="nav-btn" onclick="mostrarProblema('p5', this)"> Vehículos</button>
+    <button class="nav-btn" onclick="mostrarProblema('p6', this)"> Biblioteca</button>
+  </nav>
+
+  <main>
+
+    <!-- PROBLEMA 1: BANCO -->
+    <section id="p1" class="problema visible">
+      <div class="problema-header">
+        <h2>🏦 Problema 1: Sistema de Cuentas Bancarias</h2>
+        <p>Gestión de cuentas con depósitos, retiros y consultas de saldo.</p>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <h3>👤 Crear Cliente</h3>
+          <div class="form-grupo">
+            <label>Nombre del cliente</label>
+            <input type="text" id="b-nombre" placeholder="Ej: Juan Pérez">
+          </div>
+          <div class="form-grupo">
+            <label>Saldo inicial ($)</label>
+            <input type="number" id="b-saldo" placeholder="Ej: 100000">
+          </div>
+          <button class="btn btn-cyan" onclick="bancoCrearCliente()">Crear Cuenta</button>
+          <p class="mensaje" id="b-msg-crear"></p>
+        </div>
+        <div class="card">
+          <h3>💰 Operaciones</h3>
+          <div class="form-grupo">
+            <label>Seleccionar cliente</label>
+            <select id="b-select-op">
+              <option value="">-- Selecciona un cliente --</option>
+            </select>
+          </div>
+          <div class="form-grupo">
+            <label>Monto ($)</label>
+            <input type="number" id="b-monto" placeholder="Ej: 50000">
+          </div>
+          <div class="btns-fila">
+            <button class="btn btn-verde" onclick="bancoOperacion('deposito')">⬆️ Depositar</button>
+            <button class="btn btn-rojo" onclick="bancoOperacion('retiro')">⬇️ Retirar</button>
+          </div>
+          <p class="mensaje" id="b-msg-op"></p>
+        </div>
+        <div class="card">
+          <h3>🔍 Consultar Saldo</h3>
+          <div class="form-grupo">
+            <label>Seleccionar cliente</label>
+            <select id="b-select-saldo">
+              <option value="">-- Selecciona un cliente --</option>
+            </select>
+          </div>
+          <button class="btn btn-cyan" onclick="bancoConsultarSaldo()">Consultar</button>
+          <div id="b-tarjeta-saldo" class="tarjeta-saldo oculto">
+            <p id="b-nombre-saldo"></p>
+            <p id="b-valor-saldo"></p>
+          </div>
+        </div>
+        <div class="card">
+          <h3>👥 Clientes Registrados</h3>
+          <ul id="b-lista-clientes" class="lista-items"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROBLEMA 2: INVENTARIO -->
+    <section id="p2" class="problema">
+      <div class="problema-header">
+        <h2>📦 Problema 2: Inventario de Tienda</h2>
+        <p>Administración de productos con nombre, precio y cantidad.</p>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <h3>➕ Registrar Producto</h3>
+          <div class="form-grupo">
+            <label>Nombre del producto</label>
+            <input type="text" id="inv-nombre" placeholder="Ej: Laptop HP">
+          </div>
+          <div class="form-grupo">
+            <label>Precio ($)</label>
+            <input type="number" id="inv-precio" placeholder="Ej: 2500000">
+          </div>
+          <div class="form-grupo">
+            <label>Cantidad disponible</label>
+            <input type="number" id="inv-cantidad" placeholder="Ej: 10">
+          </div>
+          <button class="btn btn-cyan" onclick="invRegistrar()">Registrar</button>
+          <p class="mensaje" id="inv-msg"></p>
+        </div>
+        <div class="card">
+          <h3>💵 Valor del Inventario</h3>
+          <p class="texto-gris">Calcula el valor total según cantidad disponible.</p>
+          <button class="btn btn-cyan" onclick="invCalcularTotal()">Calcular Total</button>
+          <div id="inv-total" class="tarjeta-saldo oculto">
+            <p>Valor Total del Inventario</p>
+            <p id="inv-total-valor"></p>
+          </div>
+        </div>
+        <div class="card span-2">
+          <h3>📋 Productos en Inventario</h3>
+          <ul id="inv-lista" class="lista-items"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROBLEMA 3: ESTUDIANTES -->
+    <section id="p3" class="problema">
+      <div class="problema-header">
+        <h2>🎓 Problema 3: Registro de Estudiantes</h2>
+        <p>Registro de estudiantes con nota final y estado de aprobación.</p>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <h3>➕ Registrar Estudiante</h3>
+          <div class="form-grupo">
+            <label>Nombre</label>
+            <input type="text" id="est-nombre" placeholder="Ej: María García">
+          </div>
+          <div class="form-grupo">
+            <label>Identificación</label>
+            <input type="text" id="est-id" placeholder="Ej: 1234567890">
+          </div>
+          <div class="form-grupo">
+            <label>Nota final (0 - 5)</label>
+            <input type="number" id="est-nota" placeholder="Ej: 3.8" step="0.1" min="0" max="5">
+          </div>
+          <button class="btn btn-cyan" onclick="estRegistrar()">Registrar</button>
+          <p class="mensaje" id="est-msg"></p>
+        </div>
+        <div class="card">
+          <h3>🔍 Consultar Estudiante</h3>
+          <div class="form-grupo">
+            <label>Seleccionar estudiante</label>
+            <select id="est-select">
+              <option value="">-- Selecciona un estudiante --</option>
+            </select>
+          </div>
+          <button class="btn btn-cyan" onclick="estConsultar()">Consultar</button>
+          <div id="est-resultado" class="tarjeta-resultado oculto"></div>
+        </div>
+        <div class="card span-2">
+          <h3>👥 Estudiantes Registrados</h3>
+          <ul id="est-lista" class="lista-items"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROBLEMA 4: CARRITO -->
+    <section id="p4" class="problema">
+      <div class="problema-header">
+        <h2>🛒 Problema 4: Carrito de Compras</h2>
+        <p>Tienda virtual con agregar, eliminar productos y total automático.</p>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <h3>➕ Agregar Producto</h3>
+          <div class="form-grupo">
+            <label>Nombre del producto</label>
+            <input type="text" id="carr-nombre" placeholder="Ej: Audífonos Sony">
+          </div>
+          <div class="form-grupo">
+            <label>Precio ($)</label>
+            <input type="number" id="carr-precio" placeholder="Ej: 150000">
+          </div>
+          <button class="btn btn-cyan" onclick="carritoAgregar()">Agregar al Carrito</button>
+          <p class="mensaje" id="carr-msg"></p>
+        </div>
+        <div class="card">
+          <h3>💳 Total del Carrito</h3>
+          <p class="texto-gris">Se actualiza automáticamente.</p>
+          <div class="tarjeta-saldo">
+            <p>Total a Pagar</p>
+            <p id="carr-total">$0</p>
+          </div>
+        </div>
+        <div class="card span-2">
+          <h3>🛍️ Productos en el Carrito</h3>
+          <ul id="carr-lista" class="lista-items"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROBLEMA 5: VEHÍCULOS -->
+    <section id="p5" class="problema">
+      <div class="problema-header">
+        <h2>🚗 Problema 5: Control de Vehículos</h2>
+        <p>Monitoreo de vehículos con control de velocidad en tiempo real.</p>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <h3>➕ Registrar Vehículo</h3>
+          <div class="form-grupo">
+            <label>Placa</label>
+            <input type="text" id="veh-placa" placeholder="Ej: ABC-123">
+          </div>
+          <div class="form-grupo">
+            <label>Modelo</label>
+            <input type="text" id="veh-modelo" placeholder="Ej: Toyota Corolla">
+          </div>
+          <button class="btn btn-cyan" onclick="vehRegistrar()">Registrar</button>
+          <p class="mensaje" id="veh-msg"></p>
+        </div>
+        <div class="card">
+          <h3>🎮 Control de Velocidad</h3>
+          <div class="form-grupo">
+            <label>Seleccionar vehículo</label>
+            <select id="veh-select">
+              <option value="">-- Selecciona un vehículo --</option>
+            </select>
+          </div>
+          <div class="form-grupo">
+            <label>Cambio de velocidad (km/h)</label>
+            <input type="number" id="veh-velocidad" placeholder="Ej: 20">
+          </div>
+          <div class="btns-fila">
+            <button class="btn btn-verde" onclick="vehCambiarVelocidad('acelerar')">⬆️ Acelerar</button>
+            <button class="btn btn-rojo" onclick="vehCambiarVelocidad('frenar')">⬇️ Frenar</button>
+          </div>
+          <p class="mensaje" id="veh-msg-op"></p>
+        </div>
+        <div class="card span-2">
+          <h3>🚙 Vehículos Registrados</h3>
+          <ul id="veh-lista" class="lista-items"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROBLEMA 6: BIBLIOTECA -->
+    <section id="p6" class="problema">
+      <div class="problema-header">
+        <h2>📚 Problema 6: Sistema de Biblioteca</h2>
+        <p>Control de préstamos y devoluciones con estado de disponibilidad.</p>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <h3>➕ Registrar Libro</h3>
+          <div class="form-grupo">
+            <label>Título</label>
+            <input type="text" id="lib-titulo" placeholder="Ej: El Principito">
+          </div>
+          <div class="form-grupo">
+            <label>Autor</label>
+            <input type="text" id="lib-autor" placeholder="Ej: Antoine de Saint-Exupéry">
+          </div>
+          <button class="btn btn-cyan" onclick="libRegistrar()">Registrar</button>
+          <p class="mensaje" id="lib-msg"></p>
+        </div>
+        <div class="card">
+          <h3>🔄 Préstamo / Devolución</h3>
+          <div class="form-grupo">
+            <label>Seleccionar libro</label>
+            <select id="lib-select">
+              <option value="">-- Selecciona un libro --</option>
+            </select>
+          </div>
+          <div class="btns-fila">
+            <button class="btn btn-rojo" onclick="libPrestar()">📤 Prestar</button>
+            <button class="btn btn-verde" onclick="libDevolver()">📥 Devolver</button>
+          </div>
+          <p class="mensaje" id="lib-msg-op"></p>
+        </div>
+        <div class="card span-2">
+          <h3>📖 Libros en Biblioteca</h3>
+          <ul id="lib-lista" class="lista-items"></ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
