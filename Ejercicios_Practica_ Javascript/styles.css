@@ -71,7 +71,7 @@ h2 {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: transform 0.2s, opacity 0.2s;
+  transition: transform 0.2s, opacity 0.2s, box-shadow 0.2s, outline 0.2s;
   font-weight: bold;
 }
 
@@ -85,6 +85,18 @@ h2 {
 .btn-azul  { background-color: #4d79ff; color: white; }
 .btn-verde { background-color: #4dff88; color: #0f0f0f; }
 .btn-gris  { background-color: #444;    color: white; }
+
+/* ── CONTRASTE BOTÓN ACTIVO — Ejercicio 3 ── */
+/* Recuadro negro grueso + sombra interior blanca para máximo contraste
+   en cualquier fondo (rojo, azul o verde)                               */
+.btn.activo-color {
+  outline: 3px solid #000000;
+  outline-offset: 3px;
+  box-shadow:
+    0 0 0 6px rgba(0, 0, 0, 0.55),   /* halo oscuro exterior */
+    inset 0 0 0 2px rgba(255,255,255,0.6); /* borde blanco interior */
+  transform: scale(1.08);
+}
 
 /* INPUTS */
 input[type="number"] {
@@ -113,6 +125,12 @@ input[type="number"] {
   font-weight: bold;
   color: #00f5ff;
   margin: 20px 0;
+}
+
+/* Temporizador — fuente más pequeña cuando muestra hh:mm:ss */
+#tiempoDisplay {
+  font-size: clamp(48px, 10vw, 80px);
+  letter-spacing: 4px;
 }
 
 .subtitulo {
@@ -154,6 +172,7 @@ input[type="text"] {
   font-size: 16px;
   width: 250px;
 }
+
 .btn-eliminar {
   float: right;
   background-color: #ff4d4d;
@@ -234,7 +253,7 @@ label {
   color: #0f0f0f;
 }
 
-/* Eliminación de elementos de lista*/
+/* Eliminación de elementos de lista */
 #listaTareas8 {
   list-style: none;
   margin-top: 25px;
